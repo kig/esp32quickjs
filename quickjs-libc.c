@@ -42,10 +42,21 @@
 #include <conio.h>
 #include <utime.h>
 #else
-#include <dlfcn.h>
+// #include <dlfcn.h>
 #include <termios.h>
 #include <sys/ioctl.h>
 #include <sys/wait.h>
+
+#define ESP32
+#define RTLD_NOW 0
+#define RTLD_LOCAL 0
+#define TIOCGWINSZ 0
+struct winsize {
+    unsigned short ws_row;
+    unsigned short ws_col;
+    unsigned short ws_xpixel;
+    unsigned short ws_ypixel;
+};
 
 #if defined(__APPLE__)
 typedef sig_t sighandler_t;

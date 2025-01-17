@@ -247,14 +247,14 @@ libunicode-table.h: unicode_gen
 	./unicode_gen unicode $@
 endif
 
-run-test262: $(OBJDIR)/run-test262.o $(QJS_LIB_OBJS)
-	$(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
+#run-test262: $(OBJDIR)/run-test262.o $(QJS_LIB_OBJS)
+#	$(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
 
-run-test262-debug: $(patsubst %.o, %.debug.o, $(OBJDIR)/run-test262.o $(QJS_LIB_OBJS))
-	$(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
+#run-test262-debug: $(patsubst %.o, %.debug.o, $(OBJDIR)/run-test262.o $(QJS_LIB_OBJS))
+#	$(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
 
-run-test262-32: $(patsubst %.o, %.m32.o, $(OBJDIR)/run-test262.o $(QJS_LIB_OBJS))
-	$(CC) -m32 $(LDFLAGS) -o $@ $^ $(LIBS)
+#run-test262-32: $(patsubst %.o, %.m32.o, $(OBJDIR)/run-test262.o $(QJS_LIB_OBJS))
+#	$(CC) -m32 $(LDFLAGS) -o $@ $^ $(LIBS)
 
 # object suffix order: nolto, [m32|m32s]
 
@@ -428,30 +428,30 @@ microbench-32: qjs32
 	./qjs32 tests/microbench.js
 
 # ES5 tests (obsolete)
-test2o: run-test262
-	time ./run-test262 -m -c test262o.conf
+#test2o: run-test262
+#	time ./run-test262 -m -c test262o.conf
 
-test2o-32: run-test262-32
-	time ./run-test262-32 -m -c test262o.conf
+#test2o-32: run-test262-32
+#	time ./run-test262-32 -m -c test262o.conf
 
-test2o-update: run-test262
-	./run-test262 -u -c test262o.conf
+#test2o-update: run-test262
+#	./run-test262 -u -c test262o.conf
 
 # Test262 tests
-test2-default: run-test262
-	time ./run-test262 -m -c test262.conf
+#test2-default: run-test262
+#	time ./run-test262 -m -c test262.conf
 
-test2: run-test262
-	time ./run-test262 -m -c test262.conf -a
+#test2: run-test262
+#	time ./run-test262 -m -c test262.conf -a
 
-test2-32: run-test262-32
-	time ./run-test262-32 -m -c test262.conf -a
+#test2-32: run-test262-32
+#	time ./run-test262-32 -m -c test262.conf -a
 
-test2-update: run-test262
-	./run-test262 -u -c test262.conf -a
+#test2-update: run-test262
+#	./run-test262 -u -c test262.conf -a
 
-test2-check: run-test262
-	time ./run-test262 -m -c test262.conf -E -a
+#test2-check: run-test262
+#	time ./run-test262 -m -c test262.conf -E -a
 
 testall: all test microbench test2o test2
 

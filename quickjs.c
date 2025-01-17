@@ -6168,11 +6168,7 @@ void JS_ComputeMemoryUsage(JSRuntime *rt, JSMemoryUsage *s)
 
 void JS_DumpMemoryUsage(FILE *fp, const JSMemoryUsage *s, JSRuntime *rt)
 {
-    fprintf(fp, "QuickJS memory usage -- "
-#ifdef CONFIG_BIGNUM
-            "BigNum "
-#endif
-            CONFIG_VERSION " version, %d-bit, malloc limit: %"PRId64"\n\n",
+    fprintf(fp, "QuickJS memory usage -- %d-bit, malloc limit: %"PRId64"\n\n",
             (int)sizeof(void *) * 8, (int64_t)(ssize_t)s->malloc_limit);
 #if 1
     if (rt) {

@@ -10,11 +10,15 @@
     {
       "name": "binzume",
       "url": "https://github.com/binzume/esp32quickjs"
+    },
+    {
+      "name": "Ilmari Heikkinen",
+      "url": "https://github.com/kig/esp32quickjs"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/binzume/esp32quickjs.git"
+    "url": "https://github.com/kig/esp32quickjs.git"
   },
   "version": "0.0.1",
   "framework": "*",
@@ -32,7 +36,6 @@
       "-<quickjs-libc.c>",
       "-<quickjs-libc.h>",
       "-<unicode_gen.c>",
-      "-<run-test262.c>"
     ]
   }
 }
