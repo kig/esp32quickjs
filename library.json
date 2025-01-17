@@ -35,7 +35,7 @@
       "-<qjsc.c>",
       "-<quickjs-libc.c>",
       "-<quickjs-libc.h>",
-      "-<unicode_gen.c>",
+      "-<unicode_gen.c>"
     ]
   }
 }
