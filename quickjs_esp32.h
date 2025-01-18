@@ -1,7 +1,6 @@
 #pragma once
 
 #if defined(WiFi_h) && !defined(ENABLE_WIFI)
-#define ENABLE_WIFI
 #endif
 #define ESP32
 
